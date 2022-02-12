@@ -27,5 +27,13 @@ export function AuthProvider({ children }) {
     };
   }, []);
 
-  return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
+  if (loading) {
+    return <p>loading...</p>;
+  } else {
+    return (
+      <AuthContext.Provider value={value}>
+        {!loading && children}
+      </AuthContext.Provider>
+    );
+  }
 }
