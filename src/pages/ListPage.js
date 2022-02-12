@@ -7,9 +7,7 @@ export const ListPage = () => {
   const { user } = useAuthContext();
 
   const handleLogout = () => {
-    // console.log("ログアウトしました1")
     auth.signOut();
-    // console.log("ログアウトしました2")
     navigate('/login');
   };
   const handleMap = () => {

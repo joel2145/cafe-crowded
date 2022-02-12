@@ -5,12 +5,9 @@ import { useAuthContext } from '../context/AuthContext';
 export const MapPage = () => {
   const navigate = useNavigate();
   const { user } = useAuthContext();
-  console.log("map")
 
   const handleLogout = () => {
-    // console.log("ログアウトしました1")
     auth.signOut();
-    // console.log("ログアウトしました2")
     navigate('/login');
   };
   const handleList = () => {

@@ -6,15 +6,20 @@ import { useNavigate } from 'react-router-dom';
 export const SignUpPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // console.log(firebaseConfig)
 
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(email, password);
-    // const { email, password } = event.target.elements;
     auth.createUserWithEmailAndPassword(email, password);
     navigate('/list');
+    await auth.createUserWithEmailAndPassword(email, password)
+      .then(res => {
+        navigate('/list')
+      }).catch(error => {
+        return null
+      });
   };
 
 

@@ -1,18 +1,8 @@
 import { auth } from '../firebase';
 import { Link, useNavigate } from 'react-router-dom';
-// import { useAuthContext } from '../context/AuthContext';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  // const { user } = useAuthContext();
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const { email, password } = event.target.elements;
-  //   auth.signInWithEmailAndPassword(email.value, password.value);
-  //   // console.log(email, password)
-  //   navigate('/list')
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,10 +10,8 @@ export const LoginPage = () => {
 
     await auth.signInWithEmailAndPassword(email.value, password.value)
       .then(res => {
-        // console.log('これは非同期処理成功時のメッセージです')
         navigate('/list')
       }).catch(error => {
-        // console.error('これは非同期処理失敗時のメッセージです。', error)
         return null
       });
   }
