@@ -10,9 +10,11 @@ export const ListPage = () => {
     auth.signOut();
     navigate('/login');
   };
+
   const handleMap = () => {
     navigate('/map');
   };
+
   if (!user) {
     return <Navigate to="/login" />;
   } else {
