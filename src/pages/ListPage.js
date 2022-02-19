@@ -1,6 +1,7 @@
 import { auth } from '../firebase';
 import { useNavigate, Navigate } from "react-router-dom";
-import { Box, Image } from '@chakra-ui/react'
+import { Box, Image, Button } from '@chakra-ui/react'
+import { Grid, GridItem } from '@chakra-ui/react'
 
 import { useAuthContext } from '../context/AuthContext';
 
@@ -31,15 +32,26 @@ export const ListPage = () => {
   } else {
     return (
       <>
-        <div>
+        <Box>
           <h1>リストページ</h1>
-          <button onClick={handleLogout}>ログアウト</button>
-          <button onClick={handleMap}>マップ画面へ</button>
-        </div>
-        <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-          <Image src={property.imageUrl} alt={property.imageAlt} />
+          <Button colorScheme='teal' onClick={handleLogout} size='sm' marginTop={5} marginBottom={5} marginRight={5}>ログアウト</Button>
+          <Button colorScheme='blue' onClick={handleMap} size='sm' marginTop={5} marginBottom={5}>マップ画面へ</Button>
+        </Box>
 
-          <Box p='6'>
+        {/* お気に入りリスト */}
+        <Grid
+          h='200px'
+          templateRows='repeat(2, 1fr)'
+          templateColumns='repeat(5, 1fr)'
+          gap={4}
+        >
+          <GridItem rowSpan={2} colSpan={1}  >
+            <Image src={property.imageUrl} alt={property.imageAlt} boxSize='150px' borderRadius='md' />
+            <Button colorScheme='blue' onClick={handleMap} size='sm' marginTop={5} marginBottom={5}>Map</Button>
+          </GridItem>
+
+
+          <GridItem colSpan={4}  >
             <Box
               mt='1'
               fontWeight='semibold'
@@ -49,9 +61,11 @@ export const ListPage = () => {
             >
               {property.title}
             </Box>
-          </Box>
-          <Image src={property.crowdedGraph} alt={property.crowdedGraphAlt} />
-        </Box>
+          </GridItem>
+          <GridItem colSpan={4} height={20} width={40} bgColor="teal">
+            <Image src={property.crowdedGraph} alt={property.crowdedGraphAlt} />
+          </GridItem>
+        </Grid>
       </>
     );
   }
