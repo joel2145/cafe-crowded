@@ -1,5 +1,5 @@
 import { auth } from '../firebase';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -14,6 +14,10 @@ export const LoginPage = () => {
       }).catch(error => {
         return null
       });
+  }
+
+  const moveToSignUp = () => {
+    navigate("/sign_up")
   }
 
   return (
@@ -32,8 +36,11 @@ export const LoginPage = () => {
           <button>ログイン</button>
         </div>
         <div>
-          ユーザ登録は<Link to={'/sign_up'}>こちら</Link>から
+          初めての方はこちら↓
         </div>
+        <button type="button" onClick={() => moveToSignUp()}>
+          新規登録
+        </button>
       </form>
     </div>
   );

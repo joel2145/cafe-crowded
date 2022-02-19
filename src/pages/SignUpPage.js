@@ -31,9 +31,13 @@ export const SignUpPage = () => {
     setPassword(event.currentTarget.value);
   };
 
+  const moveToLogin = () => {
+    navigate("/login")
+  }
+
   return (
     <div>
-      <h1>ユーザ登録</h1>
+      <h1>新規登録</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>メールアドレス</label>
@@ -54,8 +58,14 @@ export const SignUpPage = () => {
           />
         </div>
         <div>
-          <button>登録</button>
+          <button>新規登録</button>
         </div>
+        <div>
+          既に登録済みの方はこちら↓
+        </div>
+        <button type="button" onClick={() => moveToLogin()}>
+          ログイン
+        </button>
       </form>
     </div>
   );
