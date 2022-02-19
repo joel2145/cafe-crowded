@@ -11,9 +11,8 @@ export const SignUpPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(email, password);
-    auth.createUserWithEmailAndPassword(email, password);
-    navigate('/list');
+    // console.log(email, password);
+
     await auth.createUserWithEmailAndPassword(email, password)
       .then(res => {
         navigate('/list')
@@ -21,7 +20,6 @@ export const SignUpPage = () => {
         return null
       });
   };
-
 
   const handleChangeEmail = (event) => {
     setEmail(event.currentTarget.value);
