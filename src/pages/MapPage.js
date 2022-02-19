@@ -17,8 +17,9 @@ export const MapPage = () => {
   };
 
   const containerStyle = {
-    width: "400px",
-    height: "400px",
+    height: "90vh",
+    width: "100%",
+
   };
 
   const center = {
@@ -30,10 +31,12 @@ export const MapPage = () => {
     return <Navigate to="/login" />;
   } else {
     return (
-      <div>
-        <h1>マップページ</h1>
-        <button onClick={handleLogout}>ログアウト</button>
-        <button onClick={handleList}>リスト画面へ</button>
+      <>
+        <div>
+          <h1>マップページ</h1>
+          <button onClick={handleLogout}>ログアウト</button>
+          <button onClick={handleList}>リスト画面へ</button>
+        </div>
         <LoadScript googleMapsApiKey="AIzaSyAv4dUsvYxraYG8qB1cd94NCoE4iB8rTAo">
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -41,7 +44,7 @@ export const MapPage = () => {
             zoom={17}
           ></GoogleMap>
         </LoadScript>
-      </div>
+      </>
     );
   }
 }

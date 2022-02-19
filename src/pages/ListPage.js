@@ -44,6 +44,65 @@ export const ListPage = () => {
           templateRows='repeat(2, 1fr)'
           templateColumns='repeat(5, 1fr)'
           gap={4}
+          marginTop={5} marginBottom={5}
+        >
+          <GridItem rowSpan={2} colSpan={1}  >
+            <Image src={property.imageUrl} alt={property.imageAlt} boxSize='150px' borderRadius='md' />
+            <Button colorScheme='blue' onClick={handleMap} size='sm' marginTop={5} marginBottom={5}>GoogleMap</Button>
+          </GridItem>
+
+
+          <GridItem colSpan={4}  >
+            <Box
+              mt='1'
+              fontWeight='semibold'
+              as='h4'
+              lineHeight='tight'
+              isTruncated
+            >
+              {property.title}
+            </Box>
+          </GridItem>
+          <GridItem colSpan={4} height={20} width={40} bgColor="teal">
+            <Image src={property.crowdedGraph} alt={property.crowdedGraphAlt} />
+          </GridItem>
+        </Grid>
+
+        <Grid
+          h='200px'
+          templateRows='repeat(2, 1fr)'
+          templateColumns='repeat(5, 1fr)'
+          gap={4}
+          marginTop={5} marginBottom={5}
+        >
+          <GridItem rowSpan={2} colSpan={1}  >
+            <Image src={property.imageUrl} alt={property.imageAlt} boxSize='150px' borderRadius='md' />
+            <Button colorScheme='blue' onClick={handleMap} size='sm' marginTop={5} marginBottom={5}>GoogleMap</Button>
+          </GridItem>
+
+
+          <GridItem colSpan={4}  >
+            <Box
+              mt='1'
+              fontWeight='semibold'
+              as='h4'
+              lineHeight='tight'
+              isTruncated
+            >
+              {property.title}
+            </Box>
+          </GridItem>
+          <GridItem colSpan={4} height={20} width={40} bgColor="teal">
+            <Image src={property.crowdedGraph} alt={property.crowdedGraphAlt} />
+          </GridItem>
+        </Grid>
+
+        <Grid
+          h='200px'
+          templateRows='repeat(2, 1fr)'
+          templateColumns='repeat(5, 1fr)'
+          gap={4}
+          marginTop={5} marginBottom={5}
         >
           <GridItem rowSpan={2} colSpan={1}  >
             <Image src={property.imageUrl} alt={property.imageAlt} boxSize='150px' borderRadius='md' />
