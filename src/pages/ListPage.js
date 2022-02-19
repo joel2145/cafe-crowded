@@ -47,7 +47,7 @@ export const ListPage = () => {
         >
           <GridItem rowSpan={2} colSpan={1}  >
             <Image src={property.imageUrl} alt={property.imageAlt} boxSize='150px' borderRadius='md' />
-            <Button colorScheme='blue' onClick={handleMap} size='sm' marginTop={5} marginBottom={5}>Map</Button>
+            <Button colorScheme='blue' onClick={handleMap} size='sm' marginTop={5} marginBottom={5}>GoogleMap</Button>
           </GridItem>
 
 
